@@ -1,19 +1,11 @@
+const express = require("express");
 const app = require("./bin/express");
-const moment = require("moment");
-const Parking = require("./module/parking/parkingSchema");
-
+const Parking = require("./module/parking/schema");
+const router = require("./module/parking/routes");
 const port = process.env.PORT || "3000";
 
-app.get("/", async (req, res) => {
-  // const pk = await Parking.create({
-  //   vehicle: "Fusca",
-  //   vehiclePlate: "ABC-1234",
-  //   parkingStartAt: moment(),
-  //   pricePerHour: 12
-  // });
+app.use(express.json());
 
-  const allVehicle = await Parking.find();
-  res.status(200).json(allVehicle);
-});
+app.use("/", router);
 
 app.listen(port, () => console.log(`Servern is On in port ${port}`));
