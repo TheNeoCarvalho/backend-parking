@@ -32,7 +32,7 @@ const save = async (req, res) => {
 const remove = async (req, res) => {
   const { id } = req.params;
   await parkinkSchema.deleteOne({ _id: id });
-  return res.status(204);
+  return res.status(204).json({ message: "Parking deleted" });
 };
 
 module.exports = {
