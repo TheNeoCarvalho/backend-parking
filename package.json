@@ -6,7 +6,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "moment": "^2.24.0",
-    "mongoose": "^5.6.9",
+    "mongoose": "^5.7.5",
     "morgan": "^1.9.1",
     "swagger": "^0.7.5",
     "swagger-jsdoc": "^3.4.0",
